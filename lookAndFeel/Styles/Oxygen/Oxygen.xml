@@ -1,0 +1,344 @@
+<synth>
+	<style id="default">
+		<state>
+			<color value="#000000" type="FOREGROUND"/>
+			<color value="#E3E2E2" type="BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="default" type="region" key=".*"/>
+
+	<style id="button">
+		<property key="Button.textShiftOffset" type="integer" value="1"/>
+		<insets top="7" left="10" bottom="7" right="10"/>
+		<state>
+			<imagePainter method="buttonBackground" path="Buttons/button-normal.png" sourceInsets="10 10 10 10"/>
+		</state>
+		<state value="PRESSED">
+			<imagePainter method="buttonBackground" path="Buttons/button-hover.png" sourceInsets="10 10 10 10"/>
+		</state>
+		<state value="SELECTED">
+			<imagePainter method="buttonBackground" path="Buttons/button-hover.png" sourceInsets="10 10 10 10"/>
+		</state>
+		<state value="MOUSE_OVER">
+			<imagePainter method="buttonBackground" path="Buttons/button-hover.png" sourceInsets="10 10 10 10"/>
+		</state>
+		<state value="MOUSE_OVER and PRESSED">
+			<imagePainter method="buttonBackground" path="Buttons/button-active.png" sourceInsets="10 10 10 10"/>
+		</state>
+	</style>
+	<bind style="button" type="region" key="Button"/>
+
+	<style id="textfield">
+		<insets top="4" left="6" bottom="4" right="6"/>
+		<opaque value="true" />
+		<state>
+			<font name="Verdana" size="10"/>
+			<color value="white" type="BACKGROUND"/>
+			<color value="black" type="TEXT_FOREGROUND"/>
+			<imagePainter method="textFieldBorder" path="TextField/tf_normal.png" sourceInsets="2 4 2 4" paintCenter="false"/>
+		</state>
+		<state value="SELECTED">
+			<font name="Verdana" size="10"/>
+			<color type="TEXT_BACKGROUND" value="#B8D0E5"/>
+			<color type="TEXT_FOREGROUND" value="black"/>
+			<imagePainter method="textFieldBorder" path="TextField/tf_normal.png" sourceInsets="2 4 2 4" paintCenter="false"/>
+		</state>
+		<state value="DISABLED">
+			<imagePainter method="textFieldBorder" path="Other/progressbar.png" sourceInsets="2 4 2 4" paintCenter="true"/>
+		</state>
+	</style>
+	<bind style="textfield" type="region" key="TextField"/>
+
+	<style id="arrowStyle">
+		<opaque value="true" />
+		<color value="#DDDCDC" type="BACKGROUND"/>
+		<imagePainter method="arrowButtonForeground" path="Arrows/arrow-up.png" center="true" direction="north" />
+		<imagePainter method="arrowButtonForeground" path="Arrows/arrow-down.png" center="true" direction="south" />
+		<imagePainter method="arrowButtonForeground" path="Arrows/arrow-left.png"  center="true" direction="west" />
+		<imagePainter method="arrowButtonForeground" path="Arrows/arrow-right.png" center="true"  direction="east" />
+	</style>
+	<bind style="arrowStyle" type="region" key="Arrowbutton" />
+
+<!-- Styles specific for eht CheckBox element BEGIN -->
+  <style id="checkbox">
+    <imageIcon id="check_off" path="CheckBox/check1.png"/>
+    <imageIcon id="check_on" path="CheckBox/check2.png"/>
+	<imageIcon id="check_moff" path="CheckBox/check3.png" strech="true"/>
+    <imageIcon id="check_mon" path="CheckBox/check4.png"/>
+	<imageIcon id="check_doff" path="CheckBox/check5.png"/>
+	<imageIcon id="check_don" path="CheckBox/check6.png"/>
+    <property key="CheckBox.icon" value="check_off"/>
+	<state value="ENABLED">
+		<property key="CheckBox.icon" value="check_off"/>
+	</state>
+    <state value="SELECTED and ENABLED">
+      <property key="CheckBox.icon" value="check_on"/>
+    </state>
+	<state value="DISABLED">
+		<property key="CheckBox.icon" value="check_doff"/>
+	</state>
+	<state value="SELECTED and DISABLED">
+		<property key="CheckBox.icon" value="check_don"/>
+	</state>
+  </style>
+  <bind style="checkbox" type="region" key="Checkbox"/>   
+<!-- Styles specific for eht CheckBox element END -->
+	
+<!-- Styles specific for the List element BEGIN -->
+
+	<style id="listStyle">
+		<insets top="2" left="5" bottom="2" right="5"/>
+		<imagePainter method="listBorder" path="List/tf_normal.png" sourceInsets="5 5 5 5" paintCenter="false" stretch="true" center="false"/>
+	</style>
+	<bind style="listStyle" type="region" key="List" />
+
+	<style id="listStyleNb">
+		<insets top="2" left="5" bottom="2" right="5"/>
+		<imagePainter method="listBorder" path="List/tf_normal.png" sourceInsets="0 0 0 0" paintCenter="false" stretch="true" center="false"/>
+	</style>
+	<bind style="listStyleNb" type="name" key="noBorder" />
+
+<!-- Styles specific for the List element END -->
+
+<!-- Styles specific for the ComboBox element BEGIN -->
+
+	<style id="comboTextBox">
+		<insets top="3" left="6" bottom="3" right="6"/>
+		<opaque value="true" />
+		<state>
+			<font name="Verdana" size="10"/>
+			<color value="#EEEDED" type="BACKGROUND"/>
+			<color value="black" type="TEXT_FOREGROUND"/>
+			<imagePainter method="textFieldBorder" path="Other/placeholder.png" sourceInsets="5 6 5 6" paintCenter="false"/>
+		</state>
+	</style>
+	<bind style="comboTextBox" type="name" key="ComboBox.textField" /> 
+
+	<style id="Combo Box">
+		<insets top="3" left="3" bottom="4" right="3"/>
+		<property key="ComboBox.showPopupOnNavigation" type="boolean" value="true"/>
+		<imageIcon id="ComboBox_Bg_Image_Enabled" path="TextField/tf_combo_new.png" paintCenter="true"/>
+		<imageIcon id="ComboBox_Bg_Image_Disabled" path="TextField/tf_combo_new.png" paintCenter="true"/>
+		<color value="#EEEDED" type="BACKGROUND"/>
+		<state value="ENABLED">
+			<color value="#EEEDED" type="BACKGROUND"/>
+			<opaque value="true"/>
+			<imagePainter method="comboBoxBorder" path="TextField/tf_combo_new.png" sourceInsets="3 3 3 3" paintCenter="false" stretch="true" center="false"/>
+		</state>
+		<state value="DISABLED">
+			<color value="#EEEDED" type="BACKGROUND"/>
+			<imagePainter method="comboBoxBorder" path="TextField/tf_combo_new.png" sourceInsets="3 3 3 3" paintCenter="false" stretch="true" center="false"/>
+		</state>
+	</style>
+	<bind style="Combo Box" type="region" key="ComboBox" />	
+
+	<style id="comboBoxLabel">
+		<state>
+			<imagePainter method="labelBackground" path="TextField/tf_combo.png" sourceInsets="5 6 5 6" paintCenter="false"/>
+		</state>
+	</style>
+	<bind style="comboBoxLabel" type="name" key="ComboBox.label" />
+
+	<style id="comboArrowStyle">
+		<imagePainter method="arrowButtonForeground" path="Arrows/arrow-down.png" center="true" direction="south" />
+	</style>
+	<bind style="comboArrowStyle" type="name" key="ComboBox.arrowButton" /> 
+
+	<style id="comboListNb">
+		<insets top="2" left="5" bottom="2" right="5"/>
+		<imagePainter method="listBorder" path="List/tf_normal.png" sourceInsets="0 0 0 0" paintCenter="false" stretch="true" center="false"/>
+	</style>
+	<bind style="comboListNb" type="name" key="ComboBox.list" />
+	
+	<style id="ComboBox List Renderer">
+		<opaque value="true"/>
+		<state value="ENABLED">
+		<color type="TEXT_FOREGROUND" value="#000000"/>
+		</state>
+		<state value="SELECTED">
+		<color type="TEXT_FOREGROUND" value="#CC6600"/>
+		<color type="TEXT_BACKGROUND" value="#FFEEDD"/>
+		</state>
+	</style>
+	<bind style="ComboBox List Renderer" type="name" key="ComboBox.listRenderer" />
+
+<!-- Styles specific for the ComboBox element END -->
+
+<!-- Styles, specific for the Table element BEGIN -->
+<!-- The style for table component. -->
+	<style id="Table">
+		<state>
+			<color type="FOREGROUND" value="#000000"/>
+			<color type="BACKGROUND" value="#FFFFFF"/>
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+			<color type="TEXT_BACKGROUND" value="#FFFFFF"/>
+			<color type="FOCUS" value="#000099"/>
+		</state>
+		<state value="ENABLED">
+			<color type="FOREGROUND" value="#000000"/>
+			<color type="BACKGROUND" value="#FFFFFF"/>
+		</state>
+		<state value="DISABLED">
+			<color type="FOREGROUND" value="#000000"/>
+			<color type="BACKGROUND" value="#CCCCCC"/>
+		</state>
+		<state value="SELECTED">
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+			<color type="TEXT_BACKGROUND" value="#99FFFF"/>
+		</state>
+	</style>
+	<bind style="Table" type="region" key="Table" />
+
+	<style id="TableHeader">
+		
+	</style>
+	<bind style="TableHeader" type="region" key="TableHeader"/>
+
+<!-- Styles, specific for the Table element END -->
+
+	<style id="tree">
+		<opaque value="true" />
+		<font name="Verdana" size="10"/>
+		<color value="white" type="BACKGROUND"/>
+		<color value="black" type="TEXT_FOREGROUND"/>		
+		<property key="Tree.leftChildIndent" type="integer" value="4" />
+		<property key="Tree.rightChildIndent" type="integer" value="12" />
+		<property key="Tree.scrollsHorizontallyAndVertically" type="boolean" value="true" />
+		<property key="Tree.rowHeight" type="integer" value="16" />
+		<property key="Tree.drawHorizontalLines" type="boolean" value="true" />
+		<property key="Tree.drawVerticalLines" type="boolean" value="true" />
+		<property key="Tree.linesStyle" type="string" value="dashed" />
+		<state>
+			<color value="#FFFFFF" type="BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="tree" type="region" key="Tree" />
+
+	<style id="treeCellStyle">
+		<opaque value="TRUE"/>
+		<imageIcon id="treeLeafIcon" path="Tree/html.png" />
+		<defaultsProperty key="Tree.leafIcon" value="treeLeafIcon" />
+		<state>
+			<color value="WHITE" type="BACKGROUND"/>
+			<color value="white" type="TEXT_BACKGROUND" />
+		</state>
+		<state value="SELECTED">
+			<color value="#B8D0E5" type="TEXT_BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="treeCellStyle" type="region" key="TreeCell"/>
+	
+	<style id="scrollBarThumbStyle">
+		<property key="ScrollBar.thumbHeight" type="integer" value="18" />
+		<property key="ScrollBar.minimumThumbSize" type="Dimension" value="36 36" />
+		<state>
+			<imagePainter method="scrollBarThumbBackground" direction="horizontal" path="Scrollbars/scroll-thumb-horiz.png" sourceInsets="0 7 0 7" />
+			<imagePainter method="scrollBarThumbBackground" direction="vertical" path="Scrollbars/scroll-thumb-vert.png" sourceInsets="7 0 7 0" />
+			<imagePainter method="scrollBarThumbBackground" direction="horizontal" path="Scrollbars/slider-horiz.png" strech="false" sourceInsets="2 4 2 4" />
+			<imagePainter method="scrollBarThumbBackground" direction="vertical" path="Scrollbars/slider-vert.png" strech="false" sourceInsets="4 6 3 6" />
+		</state>
+		<state value="MOUSE_OVER">
+			<imagePainter method="scrollBarThumbBackground" direction="horizontal" path="Scrollbars/scroll-thumb-horiz.png" sourceInsets="0 7 0 7" />
+			<imagePainter method="scrollBarThumbBackground" direction="vertical" path="Scrollbars/scroll-thumb-vert.png" sourceInsets="7 0 7 0" />
+			<imagePainter method="scrollBarThumbBackground" direction="horizontal" path="Scrollbars/slider-horiz-prelight.png" strech="false" sourceInsets="2 4 2 4" />
+			<imagePainter method="scrollBarThumbBackground" direction="vertical" path="Scrollbars/slider-vert-prelight.png" strech="false" sourceInsets="4 6 3 6" />
+		</state>
+		<state value="DISABLED">
+		</state>
+	</style>
+	<bind style="scrollBarThumbStyle" type="REGION" key="ScrollBarThumb" />
+
+	<style id="scrollbarTrackStyle">
+		<opaque value="true" />
+		<state>
+			<imagePainter method="scrollBarTrackBackground" path="Scrollbars/trough-scrollbar-horiz.png" direction="horizontal" strech="false" sourceInsets="2 4 2 4" />
+			<imagePainter method="scrollBarTrackBackground" path="Scrollbars/trough-scrollbar-vert.png" direction="vertical" strech="false" sourceInsets="4 6 3 6" />
+		</state>
+		<state value="DISABLED">
+			<imagePainter method="scrollBarTrackBackground" path="Scrollbars/trough-scrollbar-horiz.png" direction="horizontal" strech="false" sourceInsets="2 4 2 4" />
+			<imagePainter method="scrollBarTrackBackground" path="Scrollbars/trough-scrollbar-vert.png" direction="vertical" strech="false" sourceInsets="4 6 3 6" />
+		</state>
+	</style>
+	<bind style="scrollbarTrackStyle" type="REGION" key="ScrollBarTrack" />
+
+	<style id="style">
+		<opaque value="TRUE"/>
+		<font name="Verdana" size="10"/>
+		<state>
+			<color value="WHITE" type="TEXT_BACKGROUND"/>
+			<color value="WHITE" type="BACKGROUND"/>
+		</state>
+		<state value="SELECTED">
+			<color value="#B8D0E5" type="TEXT_BACKGROUND"/>
+			<color value="WHITE" type="BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="style" type="region" key="List"/>
+
+	<style id="PanelStyle">
+		<opaque value="false"/>
+		<state>
+			<imagePainter method="panelBorder" path="Panel/border1.png" sourceInsets="5 5 5 5" />
+		</state>
+	</style>
+	<!-- <bind style="PanelStyle" type="region" key="Panel" /> -->
+	<bind style="PanelStyle" type="name" key="titled" />
+
+	<style id="progressBar">
+		<imagePainter method="progressBarForeground" direction="horizontal" path="Other/progressbar-fill.png" sourceInsets="5 5 5 5" paintCenter="true" stretch="true" center="false"/>
+		<imagePainter method="progressBarBackground" direction="horizontal" path="Other/progressbar.png" sourceInsets="5 5 5 5" paintCenter="true" stretch="true" center="false"/>
+		<imagePainter method="progressBarForeground" direction="vertical" path="Other/progressbar-v-fill.png" sourceInsets="5 5 5 5" paintCenter="true" stretch="true" center="false"/>
+		<imagePainter method="progressBarBackground" direction="vertical" path="Other/progressbar-v.png" sourceInsets="5 5 5 5" paintCenter="true" stretch="true" center="false"/>
+	</style>
+	<bind style="progressBar" type="region" key="ProgressBar"/>
+
+	<style id="tabbedPaneTab">
+		<insets top="3" left="5" bottom="3" right="5"/>
+		<imagePainter method="tabbedPaneTabBackground" path="Tabs/tab.png" sourceInsets="0 5 0 5" paintCenter="true" strech="true" center="false"/>
+		<state value="SELECTED" >
+			<imagePainter method="tabbedPaneTabBackground" path="Tabs/tab-active.png" sourceInsets="0 1 0 1" paintCenter="true" strech="true" center="false"/>
+		</state>
+	</style>
+	<bind style="tabbedPaneTab" type="region" key="TabbedPaneTab"/>
+
+	<!-- The style for the tabbed pane content. -->
+	<style id="Tabbed Pane Content">
+		<imagePainter method="tabbedPaneContentBackground" path="Tabs/notebook.png" sourceInsets="10 10 10 10" paintCenter="true" stretch="true" center="false"/>
+	</style>
+	<bind style="Tabbed Pane Content" type="region" key="TabbedPaneContent" />
+
+	<style id="fileChooser">
+		<imageIcon id="FileChooser_Cancel_Icon" path="FileChooser/cancel.png"/>
+		<property key="FileChooser.cancelIcon" type="idref" value="FileChooser_Cancel_Icon"/>
+		<imageIcon id="FileChooser_OK_Icon" path="FileChooser/ok.png"/>
+		<property key="FileChooser.okIcon" type="idref" value="FileChooser_OK_Icon"/>
+		<imageIcon id="FileChooser_Folder_Icon" path="FileChooser/folder.png"/>
+		<property key="FileView.directoryIcon" type="idref" value="FileChooser_Folder_Icon"/>
+		<imageIcon id="FileChooser_File_Icon" path="FileChooser/file.png"/>
+		<property key="FileView.fileIcon" type="idref" value="FileChooser_File_Icon"/>
+		<imageIcon id="FileChooser_Computer_Icon" path="FileChooser/computer.png"/>
+		<property key="FileView.computerIcon" type="idref" value="FileChooser_Computer_Icon"/>
+		<imageIcon id="FileChooser_Harddisk_Icon" path="FileChooser/hdd.png"/>
+		<property key="FileView.hardDriveIcon" type="idref" value="FileChooser_Harddisk_Icon"/>
+		<imageIcon id="FileChooser_Floppydriver_Icon" path="FileChooser/floppy.png"/>
+		<property key="FileView.floppyDriveIcon" type="idref" value="FileChooser_Floppydriver_Icon"/>
+		<imageIcon id="FileChooser_NewFolder_Icon" path="FileChooser/folder_new.png"/>
+		<property key="FileChooser.newFolderIcon" type="idref" value="FileChooser_NewFolder_Icon"/>
+		<imageIcon id="FileChooser_UpperFolder_Icon" path="FileChooser/go_up.png"/>
+		<property key="FileChooser.upFolderIcon" type="idref" value="FileChooser_UpperFolder_Icon"/>
+		<imageIcon id="FileChooser_Home_Icon" path="FileChooser/folder_home.png"/>
+		<property key="FileChooser.homeFolderIcon" type="idref" value="FileChooser_Home_Icon"/>
+		
+		<!-- <imageIcon id="FileChooser_Details_Icon" path="FileChooser/view_detailed.png"/>
+		<property key="FileChooser.detailsViewIcon" type="idref" value="FileChooser_Details_Icon"/>
+		<imageIcon id="FileChooser_List_Icon" path="FileChooser/view_list_details.png"/>
+		<property key="FileChooser.listViewIcon" type="idref" value="FileChooser_List_Icon"/> -->
+		<insets top="10" left="10" bottom="10" right="10"/>
+	</style>
+	<bind	style="fileChooser" type="region" key="FileChooser"/>
+
+
+
+	
+
+</synth>

@@ -1,0 +1,9 @@
+#./
+#Sun Jun 14 22:11:10 EEST 2009
+DefaultDirectory=/home/ivailo/Documents/Library
+Theme=Metal
+TempDir=/home/ivailo/temp
+FieldFont=Verdana, Plain, 10
+LabelFont=Verdana, Bold, 10
+OutputDir=/home/ivailo/Books
+Icons=Oxygen
